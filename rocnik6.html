@@ -5,7 +5,6 @@
   <title>6. ročník | Fyzika | Procvi-.to</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* ======= ZÁKLAD ======= */
     body {
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #ffeaa7, #fab1a0, #74b9ff);
@@ -34,13 +33,12 @@
       margin-bottom: 10px;
     }
 
-    /* ======= SEKCE TÉMAT ======= */
     .topic {
       background: rgba(255, 255, 255, 0.8);
       border-radius: 20px;
       padding: 25px;
       margin: 30px auto;
-      max-width: 800px;
+      max-width: 850px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       transition: 0.3s;
     }
@@ -80,7 +78,6 @@
       margin: 8px 0;
     }
 
-    /* ======= PROCVIČOVÁNÍ ======= */
     .exercise {
       margin: 50px auto;
       background: rgba(255, 255, 255, 0.8);
@@ -138,7 +135,6 @@
       background: rgba(255,255,255,0.9);
     }
 
-    /* ======= MOBIL ======= */
     @media (max-width: 600px) {
       h1 {
         font-size: 1.8rem;
@@ -156,21 +152,46 @@
 
   <h1>6. ročník – Fyzika</h1>
 
+  <!-- Slavní vynálezci -->
   <div class="topic">
-    <h2>🔬 Slavní čeští vynálezci</h2>
+    <h2>🔬 Slavní vynálezci</h2>
     <p>Klikni a zobraz si přehled učiva.</p>
-    <button onclick="toggleContent()">Zobrazit učivo</button>
+    <button onclick="toggleContent('inventors')">Zobrazit učivo</button>
 
     <div class="content" id="inventors">
       <p><b>František Křižík</b> – vynalezl obloukovou lampu 💡</p>
-      <p><b>František Josef Gerstner</b> – podle některých zdrojů <i>„koně z přežka“</i>, známý však hlavně jako zakladatel strojního inženýrství a spoluautor první železnice 🚂</p>
-      <p><b>Bratři Veverkové</b> – vynalezli ruchadlo, které usnadnilo obdělávání půdy 🌾</p>
+      <p><b>Bratři Veverkové</b> – vynalezli ruchadlo 🌾</p>
       <p><b>Prokop Diviš</b> – sestrojil bleskosvod ⚡</p>
       <p><b>Josef Božek</b> – zkonstruoval první český parovůz 🚗</p>
       <p><b>Josef Ressel</b> – vynalezl lodní šroub 🚢</p>
+      <hr>
+      <p><b>Isaac Newton</b> – objevil zákony o přitažlivosti (gravitaci) 🌍</p>
+      <p><b>Alfred Nobel</b> – vynalezl dynamit 💣</p>
+      <p><b>Alexander Graham Bell</b> – vynalezl telefon ☎️</p>
+      <p><b>Bratři Wrightové</b> – postavili první letadlo ✈️</p>
+      <p><b>Thomas Alva Edison</b> – vynalezl žárovku 💡</p>
     </div>
   </div>
 
+  <!-- Látky -->
+  <div class="topic">
+    <h2>🧪 Látky</h2>
+    <p>Klikni a otevři učivo o látkách.</p>
+    <button onclick="toggleContent('substances')">Zobrazit učivo</button>
+
+    <div class="content" id="substances">
+      <p><b>Těleso</b> – osoba, zvíře, rostlina nebo věc, které můžeme přisoudit tvar, rozměry a polohu.</p>
+      <p><b>Látka</b> – materiál, ze kterého je těleso vytvořeno (např. kov, vzduch, voda).</p>
+      <p><b>Skupenství látek:</b></p>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li>🔹 Pevné – např. dřevo</li>
+        <li>🔹 Kapalné – např. voda</li>
+        <li>🔹 Plynné – např. vzduch</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Procvičování -->
   <div class="exercise">
     <h2>🎮 Procvičování – Kartičky</h2>
     <p>Klikni na kartičku a zjisti, co kdo vynalezl!</p>
@@ -179,10 +200,6 @@
       <div class="card" onclick="flipCard(this)">
         František Křižík
         <div class="back">Oblouková lampa 💡</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        František J. Gerstner
-        <div class="back">Strojní inženýr, železnice 🚂</div>
       </div>
       <div class="card" onclick="flipCard(this)">
         Bratři Veverkové
@@ -200,24 +217,40 @@
         Josef Ressel
         <div class="back">Lodní šroub 🚢</div>
       </div>
+      <div class="card" onclick="flipCard(this)">
+        Isaac Newton
+        <div class="back">Zákony gravitace 🌍</div>
+      </div>
+      <div class="card" onclick="flipCard(this)">
+        Alfred Nobel
+        <div class="back">Dynamit 💣</div>
+      </div>
+      <div class="card" onclick="flipCard(this)">
+        A. G. Bell
+        <div class="back">Telefon ☎️</div>
+      </div>
+      <div class="card" onclick="flipCard(this)">
+        Bratři Wrightové
+        <div class="back">Letadlo ✈️</div>
+      </div>
+      <div class="card" onclick="flipCard(this)">
+        Thomas A. Edison
+        <div class="back">Žárovka 💡</div>
+      </div>
     </div>
   </div>
 
   <a href="index.html">⬅️ Zpět na hlavní stránku</a>
 
   <script>
-    function toggleContent() {
-      const content = document.getElementById("inventors");
+    function toggleContent(id) {
+      const content = document.getElementById(id);
       content.style.display = content.style.display === "block" ? "none" : "block";
     }
 
     function flipCard(card) {
       const back = card.querySelector('.back');
-      if (back.style.display === "block") {
-        back.style.display = "none";
-      } else {
-        back.style.display = "block";
-      }
+      back.style.display = back.style.display === "block" ? "none" : "block";
     }
   </script>
 </body>
