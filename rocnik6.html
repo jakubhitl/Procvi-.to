@@ -78,18 +78,9 @@
       margin: 8px 0;
     }
 
-    .exercise {
-      margin: 50px auto;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 900px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 20px;
       margin-top: 25px;
     }
@@ -103,7 +94,6 @@
       cursor: pointer;
       transition: 0.4s;
       position: relative;
-      perspective: 1000px;
     }
 
     .card:hover {
@@ -117,6 +107,27 @@
       border-radius: 15px;
       padding: 30px 10px;
       font-weight: bold;
+    }
+
+    .quiz {
+      background: rgba(255,255,255,0.7);
+      padding: 15px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .quiz button {
+      margin: 5px;
+      background: linear-gradient(135deg, #55efc4, #81ecec);
+    }
+
+    .quiz button:hover {
+      background: linear-gradient(135deg, #81ecec, #55efc4);
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 10px;
     }
 
     a {
@@ -139,7 +150,7 @@
       h1 {
         font-size: 1.8rem;
       }
-      .topic, .exercise {
+      .topic {
         padding: 20px;
       }
       button {
@@ -155,7 +166,7 @@
   <!-- Slavní vynálezci -->
   <div class="topic">
     <h2>🔬 Slavní vynálezci</h2>
-    <p>Klikni a zobraz si přehled učiva.</p>
+    <p>Klikni a zobraz si přehled učiva a hry.</p>
     <button onclick="toggleContent('inventors')">Zobrazit učivo</button>
 
     <div class="content" id="inventors">
@@ -165,18 +176,42 @@
       <p><b>Josef Božek</b> – zkonstruoval první český parovůz 🚗</p>
       <p><b>Josef Ressel</b> – vynalezl lodní šroub 🚢</p>
       <hr>
-      <p><b>Isaac Newton</b> – objevil zákony o přitažlivosti (gravitaci) 🌍</p>
+      <p><b>Isaac Newton</b> – objevil zákony o přitažlivosti 🌍</p>
       <p><b>Alfred Nobel</b> – vynalezl dynamit 💣</p>
       <p><b>Alexander Graham Bell</b> – vynalezl telefon ☎️</p>
       <p><b>Bratři Wrightové</b> – postavili první letadlo ✈️</p>
-      <p><b>Thomas Alva Edison</b> – vynalezl žárovku 💡</p>
+      <p><b>Thomas Edison</b> – vynalezl žárovku 💡</p>
+
+      <div class="quiz">
+        <h3>🎮 Mini kvíz – Slavní vynálezci</h3>
+        <p>Kdo vynalezl bleskosvod?</p>
+        <button onclick="checkAnswer(this, true)">Prokop Diviš</button>
+        <button onclick="checkAnswer(this, false)">Isaac Newton</button>
+        <button onclick="checkAnswer(this, false)">Thomas Edison</button>
+        <div class="result"></div>
+      </div>
+
+      <div class="cards">
+        <div class="card" onclick="flipCard(this)">
+          Alfred Nobel
+          <div class="back">Dynamit 💣</div>
+        </div>
+        <div class="card" onclick="flipCard(this)">
+          Bratři Wrightové
+          <div class="back">Letadlo ✈️</div>
+        </div>
+        <div class="card" onclick="flipCard(this)">
+          Edison
+          <div class="back">Žárovka 💡</div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Látky -->
   <div class="topic">
     <h2>🧪 Látky</h2>
-    <p>Klikni a otevři učivo o látkách.</p>
+    <p>Klikni a otevři učivo i hry o látkách.</p>
     <button onclick="toggleContent('substances')">Zobrazit učivo</button>
 
     <div class="content" id="substances">
@@ -188,54 +223,14 @@
         <li>🔹 Kapalné – např. voda</li>
         <li>🔹 Plynné – např. vzduch</li>
       </ul>
-    </div>
-  </div>
 
-  <!-- Procvičování -->
-  <div class="exercise">
-    <h2>🎮 Procvičování – Kartičky</h2>
-    <p>Klikni na kartičku a zjisti, co kdo vynalezl!</p>
-
-    <div class="cards">
-      <div class="card" onclick="flipCard(this)">
-        František Křižík
-        <div class="back">Oblouková lampa 💡</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        Bratři Veverkové
-        <div class="back">Ruchadlo 🌾</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        Prokop Diviš
-        <div class="back">Bleskosvod ⚡</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        Josef Božek
-        <div class="back">Parovůz 🚗</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        Josef Ressel
-        <div class="back">Lodní šroub 🚢</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        Isaac Newton
-        <div class="back">Zákony gravitace 🌍</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        Alfred Nobel
-        <div class="back">Dynamit 💣</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        A. G. Bell
-        <div class="back">Telefon ☎️</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        Bratři Wrightové
-        <div class="back">Letadlo ✈️</div>
-      </div>
-      <div class="card" onclick="flipCard(this)">
-        Thomas A. Edison
-        <div class="back">Žárovka 💡</div>
+      <div class="quiz">
+        <h3>🧠 Mini kvíz – Skupenství látek</h3>
+        <p>Co patří mezi kapaliny?</p>
+        <button onclick="checkAnswer(this, true)">Voda</button>
+        <button onclick="checkAnswer(this, false)">Vzduch</button>
+        <button onclick="checkAnswer(this, false)">Dřevo</button>
+        <div class="result"></div>
       </div>
     </div>
   </div>
@@ -251,6 +246,17 @@
     function flipCard(card) {
       const back = card.querySelector('.back');
       back.style.display = back.style.display === "block" ? "none" : "block";
+    }
+
+    function checkAnswer(button, correct) {
+      const resultDiv = button.parentElement.querySelector(".result");
+      if (correct) {
+        resultDiv.textContent = "✅ Správně!";
+        resultDiv.style.color = "green";
+      } else {
+        resultDiv.textContent = "❌ Špatně, zkus znovu.";
+        resultDiv.style.color = "red";
+      }
     }
   </script>
 </body>
