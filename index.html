@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <title>Procvi-.to</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procvi-.to | Úvodní stránka</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      padding: 50px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 40px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .icon {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .grade {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* barvy ikon */
+    .g6 { color: #ffeaa7; }
+    .g7 { color: #81ecec; }
+    .g8 { color: #fab1a0; }
+    .g9 { color: #74b9ff; }
+  </style>
 </head>
 <body>
-  <h1>Ahoj!</h1>
-  <p>Toto je moje první stránka na GitHub Pages 🎉</p>
+
+  <header>
+    <h1>Procvi-.to</h1>
+    <p>Vyber svůj ročník 👇</p>
+  </header>
+
+  <main class="container">
+    <a href="rocnik6.html" class="card">
+      <div class="icon g6">📘</div>
+      <div class="grade">6. ročník</div>
+    </a>
+
+    <a href="rocnik7.html" class="card">
+      <div class="icon g7">📗</div>
+      <div class="grade">7. ročník</div>
+    </a>
+
+    <a href="rocnik8.html" class="card">
+      <div class="icon g8">📙</div>
+      <div class="grade">8. ročník</div>
+    </a>
+
+    <a href="rocnik9.html" class="card">
+      <div class="icon g9">📕</div>
+      <div class="grade">9. ročník</div>
+    </a>
+  </main>
+
+  <footer>
+    © 2025 Procvi-.to | Stránky vytvořil Jakub Hitl 💻
+  </footer>
+
 </body>
 </html>
