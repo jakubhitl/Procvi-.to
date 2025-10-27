@@ -9,11 +9,67 @@
       background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
       color: #2d3436;
       text-align: center;
-      padding-top: 100px;
+      padding: 40px 20px;
     }
+
+    h1 {
+      margin-top: 40px;
+    }
+
+    .topic {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 700px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .topic:hover {
+      transform: translateY(-3px);
+    }
+
+    button {
+      background: #fdcb6e;
+      border: none;
+      color: #2d3436;
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ffeaa7;
+    }
+
+    .content {
+      display: none;
+      margin-top: 15px;
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .content p {
+      margin: 8px 0;
+    }
+
+    .exercise {
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     a {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 30px;
       color: #0984e3;
       text-decoration: none;
       font-weight: bold;
@@ -21,8 +77,39 @@
   </style>
 </head>
 <body>
-  <h1>6. ročník</h1>
-  <p>V této sekci zatím nic není 🙂</p>
+  <h1>6. ročník – Fyzika</h1>
+
+  <div class="topic">
+    <h2>🔬 Slavní čeští vynálezci</h2>
+    <p>Klikni na tlačítko níže a zobraz si přehled učiva.</p>
+    <button onclick="toggleContent()">Zobrazit učivo</button>
+
+    <div class="content" id="inventors">
+      <p><b>František Křižík</b> – vynalezl obloukovou lampu 💡</p>
+      <p><b>František Josef Gerstner</b> – strojní inženýr, pomáhal s výstavbou železnice 🚂</p>
+      <p><b>Bratři Veverkové</b> – vynalezli ruchadlo, které zlepšilo obdělávání půdy 🌾</p>
+      <p><b>Prokop Diviš</b> – sestrojil bleskosvod ⚡</p>
+      <p><b>Josef Božek</b> – zkonstruoval první český parovůz 🚗</p>
+      <p><b>Josef Ressel</b> – vynalezl lodní šroub 🚢</p>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>🎮 Procvičování</h3>
+    <p>Zde si brzy budeš moct zahrát zábavné hry na procvičení vynálezců!</p>
+  </div>
+
   <a href="index.html">⬅️ Zpět na hlavní stránku</a>
+
+  <script>
+    function toggleContent() {
+      const content = document.getElementById("inventors");
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
