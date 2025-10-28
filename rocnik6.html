@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="utf-8">
-  <title>6. ročník | Fyzika | Procvi-.to</title>
+  <title>6. ročník | Procvi-.to</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -33,9 +33,9 @@
       margin-bottom: 10px;
     }
 
-    .topic {
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 20px;
+    .subject {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 25px;
       padding: 25px;
       margin: 30px auto;
       max-width: 850px;
@@ -43,7 +43,7 @@
       transition: 0.3s;
     }
 
-    .topic:hover {
+    .subject:hover {
       transform: scale(1.02);
     }
 
@@ -56,6 +56,7 @@
       font-size: 1rem;
       cursor: pointer;
       transition: 0.3s;
+      margin-top: 10px;
     }
 
     button:hover {
@@ -72,7 +73,7 @@
     }
 
     .content p {
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.6);
       padding: 10px;
       border-radius: 10px;
       margin: 8px 0;
@@ -93,7 +94,6 @@
       font-weight: bold;
       cursor: pointer;
       transition: 0.4s;
-      position: relative;
     }
 
     .card:hover {
@@ -121,10 +121,6 @@
       background: linear-gradient(135deg, #55efc4, #81ecec);
     }
 
-    .quiz button:hover {
-      background: linear-gradient(135deg, #81ecec, #55efc4);
-    }
-
     .result {
       font-weight: bold;
       margin-top: 10px;
@@ -150,7 +146,7 @@
       h1 {
         font-size: 1.8rem;
       }
-      .topic {
+      .subject {
         padding: 20px;
       }
       button {
@@ -161,26 +157,26 @@
 </head>
 <body>
 
-  <h1>6. ročník – Fyzika</h1>
+  <h1>6. ročník</h1>
 
-  <!-- Slavní vynálezci -->
-  <div class="topic">
-    <h2>🔬 Slavní vynálezci</h2>
-    <p>Klikni a zobraz si přehled učiva a hry.</p>
-    <button onclick="toggleContent('inventors')">Zobrazit učivo</button>
+  <!-- Fyzika -->
+  <div class="subject">
+    <h2>🧪 Fyzika</h2>
+    <p>Klikni a zobraz si přehled učiva i hry.</p>
+    <button onclick="toggleContent('fyzika')">Zobrazit učivo</button>
 
-    <div class="content" id="inventors">
+    <div class="content" id="fyzika">
+      <h3>Slavní vynálezci</h3>
       <p><b>František Křižík</b> – vynalezl obloukovou lampu 💡</p>
       <p><b>Bratři Veverkové</b> – vynalezli ruchadlo 🌾</p>
       <p><b>Prokop Diviš</b> – sestrojil bleskosvod ⚡</p>
       <p><b>Josef Božek</b> – zkonstruoval první český parovůz 🚗</p>
       <p><b>Josef Ressel</b> – vynalezl lodní šroub 🚢</p>
-      <hr>
-      <p><b>Isaac Newton</b> – objevil zákony o přitažlivosti 🌍</p>
+      <p><b>Isaac Newton</b> – objevil zákony gravitace 🌍</p>
       <p><b>Alfred Nobel</b> – vynalezl dynamit 💣</p>
       <p><b>Alexander Graham Bell</b> – vynalezl telefon ☎️</p>
       <p><b>Bratři Wrightové</b> – postavili první letadlo ✈️</p>
-      <p><b>Thomas Edison</b> – vynalezl žárovku 💡</p>
+      <p><b>Thomas Alva Edison</b> – vynalezl žárovku 💡</p>
 
       <div class="quiz">
         <h3>🎮 Mini kvíz – Slavní vynálezci</h3>
@@ -191,41 +187,18 @@
         <div class="result"></div>
       </div>
 
-      <div class="cards">
-        <div class="card" onclick="flipCard(this)">
-          Alfred Nobel
-          <div class="back">Dynamit 💣</div>
-        </div>
-        <div class="card" onclick="flipCard(this)">
-          Bratři Wrightové
-          <div class="back">Letadlo ✈️</div>
-        </div>
-        <div class="card" onclick="flipCard(this)">
-          Edison
-          <div class="back">Žárovka 💡</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Látky -->
-  <div class="topic">
-    <h2>🧪 Látky</h2>
-    <p>Klikni a otevři učivo i hry o látkách.</p>
-    <button onclick="toggleContent('substances')">Zobrazit učivo</button>
-
-    <div class="content" id="substances">
-      <p><b>Těleso</b> – osoba, zvíře, rostlina nebo věc, které můžeme přisoudit tvar, rozměry a polohu.</p>
-      <p><b>Látka</b> – materiál, ze kterého je těleso vytvořeno (např. kov, vzduch, voda).</p>
+      <h3>Látky</h3>
+      <p><b>Těleso</b> – má tvar, rozměry a polohu (např. rostlina, zvíře, věc).</p>
+      <p><b>Látka</b> – materiál, ze kterého je těleso vytvořeno (kov, voda, vzduch).</p>
       <p><b>Skupenství látek:</b></p>
-      <ul style="list-style-type:none; padding-left:0;">
+      <ul style="list-style:none; padding-left:0;">
         <li>🔹 Pevné – např. dřevo</li>
         <li>🔹 Kapalné – např. voda</li>
         <li>🔹 Plynné – např. vzduch</li>
       </ul>
 
       <div class="quiz">
-        <h3>🧠 Mini kvíz – Skupenství látek</h3>
+        <h3>🧠 Mini hra – Skupenství</h3>
         <p>Co patří mezi kapaliny?</p>
         <button onclick="checkAnswer(this, true)">Voda</button>
         <button onclick="checkAnswer(this, false)">Vzduch</button>
@@ -235,17 +208,32 @@
     </div>
   </div>
 
+  <!-- Matematika -->
+  <div class="subject">
+    <h2>➗ Matematika</h2>
+    <p>Klikni pro otevření učiva.</p>
+    <button onclick="toggleContent('matika')">Zobrazit učivo</button>
+    <div class="content" id="matika">
+      <p>Tato sekce se připravuje. Již brzy zde najdeš učivo a hry na procvičení. 🧩</p>
+    </div>
+  </div>
+
+  <!-- Čeština -->
+  <div class="subject">
+    <h2>✏️ Čeština</h2>
+    <p>Klikni pro otevření učiva.</p>
+    <button onclick="toggleContent('cestina')">Zobrazit učivo</button>
+    <div class="content" id="cestina">
+      <p>Zatím zde není žádné učivo, ale brzy přibude! 📖</p>
+    </div>
+  </div>
+
   <a href="index.html">⬅️ Zpět na hlavní stránku</a>
 
   <script>
     function toggleContent(id) {
       const content = document.getElementById(id);
       content.style.display = content.style.display === "block" ? "none" : "block";
-    }
-
-    function flipCard(card) {
-      const back = card.querySelector('.back');
-      back.style.display = back.style.display === "block" ? "none" : "block";
     }
 
     function checkAnswer(button, correct) {
